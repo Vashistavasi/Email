@@ -43,6 +43,7 @@ public class EmailService {
         StringWriter stringWriter = new StringWriter();
         Map<String, Object> model = new HashMap<>();
         model.put("user", user);
+        System.out.println(path);
         configuration.setClassForTemplateLoading(this.getClass(), "/templates/");
         configuration.getTemplate(path).process(model, stringWriter);
         return stringWriter.getBuffer().toString();
